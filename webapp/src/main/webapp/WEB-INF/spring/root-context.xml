@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean name="cocktailService" class="org.henri.cocktailfactory.ws.CocktailServiceDemo"/>
+
+    <bean name="cocktailExporter" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="cocktailService"/>
+        <property name="serviceInterface" value="org.henri.cocktailfactory.ws.CocktailService"/>
+    </bean>
+
+</beans>
